@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .newone {
+            height: 200px;
+            width: 200px;
+            border-radius: 50%;
+            animation: move 4s linear 0s infinite normal;
+            background-color: brown;
+        }
+
+        @keyframes move {
+
+            0%,
+            100% {
+                background-color: orange;
+                position: relative;
+                top: 0;
+                left: 0px;
+                /* transform: perspective(300px) rotateX(200deg); */
+            }
+
+            25% {
+                background-color: cyan;
+                position: relative;
+                top: 0px;
+                left: 350px;
+                transform: perspective(300px) rotate3d(1, 1, 1, 200deg);
+            }
+
+            50% {
+                background-color: magenta;
+                position: relative;
+                top: 350px;
+                left: 350px;
+                transform: perspective(300px) rotate3d(4, 1, 1, 360deg);
+
+            }
+
+            75% {
+                background-color: pink;
+                position: relative;
+                top: 350px;
+                left: 0px;
+                transform: perspective(350px) rotate3d(1, 1, 1, 300deg);
+
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="newone"></div>
+</body>
+
+</html>

@@ -1,0 +1,149 @@
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background: black;
+        }
+
+        #newone {
+            background: cyan;
+            padding: 40px;
+            width: 270px;
+            transform: translatex(45deg);
+        }
+
+        #newone_1 {
+            background: cyan;
+            padding: 40px;
+            width: 270px;
+            transform: scale(1.0, 1.0);
+        }
+
+        #newone_2 {
+            background: cyan;
+            padding: 40px;
+            width: 270px;
+            transform: rotate(-30deg);
+        }
+
+        #newone_3 {
+            background: cyan;
+            padding: 30px;
+            width: 200px;
+            transform: skew(20deg, -18deg);
+        }
+
+        #newone_1:hover {
+            padding: 123px;
+            border-radius: 12px;
+            transform: rotate(90deg);
+            background-color: orange;
+            transition-property: all;
+            transition-delay: 1s;
+            transition-duration: 5s;
+            transition-timing-function: ease-in;
+        }
+
+        #newone_2:hover {
+            padding: 30px;
+            border-radius: 270px;
+            text-align: center;
+            transform: rotate(-60deg);
+            background-color: brown;
+            transition: all 5s linear 2s;
+            /* transition:transition-property transition-duration transition-timing-function transition-delay ; */
+        }
+
+        .key-frames {
+            width: 100px;
+            padding: 40px;
+            background: yellow;
+            animation-name: move;
+            animation-timing-function: linear;
+            animation-duration: 5s;
+            animation-iteration-count: 5;
+            animation-direction: alternate-reverse;
+            border-radius: 100px;
+        }
+
+        .key {
+            width: 100px;
+            padding: 40px;
+            background: yellow;
+            /* animation-name: move;
+            animation-timing-function: linear;
+            animation-duration: 5s;
+            animation-iteration-count: 5;
+            animation-direction: alternate-reverse; */
+            animation: nextmove 2s linear infinite alternate-reverse 2s;
+            border-radius: 100px;
+        }
+
+        @keyframes move {
+
+            0%,
+            100% {
+                position: relative;
+                top: 0px;
+                left: 0px;
+
+            }
+
+            50% {
+                position: relative;
+
+                top: 200px;
+                left: 200px;
+            }
+
+            75% {
+                position: relative;
+
+                top: 0px;
+                left: 200px;
+            }
+        }
+
+        @keyframes nextmove {
+
+            0%,
+            100% {
+                position: relative;
+                top: 30px;
+                left: 0px;
+
+            }
+
+            50% {
+                position: relative;
+
+                top: 240px;
+                left: 270px;
+            }
+
+            75% {
+                position: relative;
+
+                top: 230px;
+                left: 270px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="key-frames"></div><br>
+    <div class="key"></div><br>
+    <h1 id="newone">CSS Transform</h1><br>
+    <h1 id="newone_1">CSS Transform</h1><br>
+    <h1 id="newone_2">CSS Transform</h1><br>
+    <h1 id="newone_3">CSS Transform</h1><br>
+
+</body>
+
+</html>

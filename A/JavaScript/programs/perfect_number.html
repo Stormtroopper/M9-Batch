@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script>
+        function main() {
+            let num = Number(prompt('Enter a number'))
+            let sum = 0;
+            if (num <= 0) console.log('Invalid Input.')
+            return
+            for (let i = 1; i < num; i++) {
+                if (num % i == 0) {
+                    sum += num
+                }
+            }
+            if (sum == num) {
+                console.log(`${num} is a perfect number`)
+            }
+            else {
+                console.log(`${num} is not a perfect number`)
+
+            }
+        }
+        main();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

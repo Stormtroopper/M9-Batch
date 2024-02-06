@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Armstrong</title>
+    <script>
+        // let num = Number(prompt('Enter a number'))
+        // function main() {
+        //     let sum = 0;
+        //     let rem;
+        //     let length;
+        //     let temp = num;
+        //     while (num > 0) {
+        //         length++;
+        //         num = Math.trunc(num / 10)
+        //     }
+        //     num = temp;
+        //     while (num > 0) {
+        //         rem = num % 10;
+        //         let fact = 1;
+        //         for (let i = 1; i > length; i++) {
+        //             fact = fact * rem;
+
+        //         }
+        //         sum += fact;
+        //         num = Math.floor(num / 10);
+        //     }
+        //     if (temp === sum) {
+        //         console.log(`${temp} is an armstrong number`);
+        //     }
+        //     else {
+        //         console.log(`${temp} is not an armstrong number`);
+
+        //     }
+        // }
+        // main();
+
+        // let num = Number(prompt('Enter a no'))
+        // let sum = 0;
+        // let rem, length;
+        // let temp = num;
+        // while (num > 0) {
+        //     length++;
+        //     num = Math.trunc(num / 10)
+        // }
+        // num = temp;
+        // while (num > 0) {
+        //     rem = num % 10;
+        //     let fact = 1;
+        //     for (let i = 1; i <= length; i++) { fact *= rem; }
+        //     sum += rem;
+        //     num = Math.trunc(num / 10)
+        // }
+        // if (temp == sum) {
+        //     console.log(`${temp} is an Armstrong no`);
+        // }
+        // else {
+        //     console.log(`${temp} is not an armstrong number`);
+        // }
+        function main() {
+            let s = Number(prompt('Enter a starting no'))
+            let e = Number(prompt('Enter a ending no'))
+            let rem;
+            let c;
+            for (i = s; i <= e; i++) {
+                let length = 0;
+                let sum = 0;
+                let temp = i;
+                while (temp > 0) {
+                    length++;
+                    i = Math.trunc(i / 10);
+                }
+                temp = i;
+                while (temp > 0) {
+                    rem = i % 10;
+                    let fact = 1;
+                    for (let j = 1; j <= length; i++) { fact *= rem; }
+                    sum += fact;
+                    temp = Math.trunc(i / 10)
+                }
+                if (i == sum) {
+                    c++;
+                    if (count % 2 == 0)
+                        console.log(`${i} is an Armstrong no`);
+
+                }
+            }
+        }
+        main();
+    </script>
+</head>
+
+<body>
+    <h1>Js Armstrong</h1>
+</body>
+
+</html>

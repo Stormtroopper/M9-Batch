@@ -1,0 +1,22 @@
+/*  
+@media (min-width:501px) and (max-width:1000px) {
+    body {
+
+        background: cyan;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
+
+@media (min-width:1200px) {
+    body {
+
+        background: tomato;
+    }
+
+    h1 {
+        text-align: center;
+    }
+}

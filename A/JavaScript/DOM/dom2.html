@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dom2</title>
+</head>
+<body>
+    <h1>
+        <span id="main-span"></span>
+        <br>
+        <h1>
+            <button onclick="decrement()">Decrement</button>
+            Count: 
+            <span id="span-tag"></span>
+            <button class="" onclick="increment()">Increment</button>
+        </h1>
+    </h1>
+    <!-- Script code -->
+    <script>
+        // console.log(this);
+        let mainspanTag=document.getElementById('main-span');
+        mainspanTag.textContent='Welcome to DOM'
+        let spanTag=document.getElementById('span-tag');
+        spanTag.style.color='red';
+        let count=0;
+        let increment=()=>{
+            count++;
+            spanTag.textContent=count;
+        }
+        let decrement=()=>{
+            if(count>0){
+
+                count--;
+                spanTag.textContent=count;
+            }
+        }
+    </script>
+</body>
+</html>

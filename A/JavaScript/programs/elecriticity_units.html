@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Electricity Units</title>
+    <script>
+        let units = Number(prompt('Enter units'));
+        // let res = 0;
+        if (units < 200) {
+            console.log('Free of cost');
+        }
+        else
+            if (units >= 200 && units < 250) {
+
+                res = (units - 200) * 3;
+            }
+            else
+                if (units >= 250 && units < 300) {
+                    res = 150 + ((units - 250) * 5);
+                }
+                else {
+
+                    res = 400 + ((units - 300) * 7);
+                }
+        console.log(`Total electricity bill is Rs.${res}`);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

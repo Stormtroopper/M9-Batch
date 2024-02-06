@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        /* .container {
+            display: flex;
+            flex-direction: row;
+        } */
+
+        .inner1,
+        .inner2 {
+            position: absolute;
+            width: 250px;
+            height: 420px;
+
+        }
+
+        .inner1 {
+            top: 0;
+            left: 0;
+        }
+
+        .inner2 {
+            top: 0;
+            left: 50%;
+        }
+
+
+        .inner1 {
+            /* background-image: url('https://images.unsplash.com/photo-1495578942200-c5f5d2137def?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D'); */
+            background-image: url('https://images.unsplash.com/photo-1503898362-59e068e7f9d8?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            /* padding: 40px; */
+        }
+
+        .inner1:hover {
+            transform: perspective(230px)rotateY(70deg);
+            transform-origin: left;
+            transition-timing-function: ease-in-out;
+            transition-duration: 3s;
+        }
+
+        .container {
+            position: relative;
+        }
+
+
+        .container:hover {
+            transform-origin: center;
+            transform: perspective(-230px)rotate(70deg);
+        }
+
+        .container,
+        img {
+            height: 420px;
+            width: 500px;
+
+        }
+
+        .inner2 {
+
+            /* background-image: url('https://images.unsplash.com/photo-1495578942200-c5f5d2137def?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D'); */
+            background-image: url('https://images.unsplash.com/photo-1503898362-59e068e7f9d8?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            /* padding: 40px;
+            z-index: 3;
+            margin-top: -699px;
+            margin-left: 485px;
+        } */
+        }
+
+        .inner2:hover {
+            transform: perspective(300px)rotateY(-70deg);
+            transform-origin: right;
+            transition-timing-function: ease-in-out;
+            transition-duration: 3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://m.media-amazon.com/images/W/MEDIAX_792452-T2/images/I/61PumHSySxL._AC_UF1000,1000_QL80_.jpg"
+            alt="" class="new-image">
+
+        <div class="inner1">
+        </div>
+        <div class="inner2"></div>
+    </div>
+
+</body>
+
+</html>
