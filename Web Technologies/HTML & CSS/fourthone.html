@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label {
+
+            color: white;
+        }
+
+
+        fieldset {
+            background: rgb(28, 66, 255);
+
+        }
+
+        .input-tag {
+            padding-left: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 align="center" style="color: blue;"><u>Student Registration Form</u></h1>
+    <form action="">
+        <fieldset>
+            <label for="">ADDRESS</label>
+            <textarea width="190px"></textarea><br><br>
+            <label for="">CITY</label>
+            <input type="text">(max 30 characters a-z and A-Z) <br><br>
+            <label for="">PIN CODE</label>
+            <input type="number">6 digit number <br><br>
+            <label for="">STATE</label>
+            <select>
+                <option value="">..Select</option>
+                <option value="">Option_1</option>
+
+            </select><br><br>
+            <label>COUNTRY</label>
+            <select>
+                <option value="">..Select</option>
+                <option value="">Option_1</option>
+
+            </select><br><br>
+            <label for="">HOBBIES</label>
+            <input type="checkbox" name="" id="">Drawing
+            <input type="checkbox" name="" id="">Singing
+            <input type="checkbox" name="" id="">Dancing
+            <input type="checkbox" name="" id="">Sketching
+            <br><br>
+            <div class="input-tag">
+                <input type="checkbox">Other
+                <input type="text">
+            </div>
+            <table>
+                <th></th>
+                <th>SNO</th>
+                <th>Examination</th>
+                <th>Board</th>
+                <th>Percentage</th>
+                <th>Year of Passout</th>
+                <tbody>
+                    <tr>
+                        <td rowspan="3" style="color:white">Qualification</td>
+                        <td>1</td>
+                        <td>class X</td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>class XII</td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Undergraduate</td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <br><br>
+                    <tr>
+                        <td colspan="6" align="center">(10char max)(upto 2 decimal)</td>
+                    </tr>
+                    <tr>
+                        <td style="color: white">COURSE Applied for</td>
+                        <td><input type="radio">B.C.A</td>
+                        <td><input type="radio">B.COM</td>
+                        <td><input type="radio">B.B.A</td>
+                        <td><input type="radio">B.A </td>
+                    </tr>
+                    <tr>
+                        <td colspan="6" align="center"><button>Submit</button><button>Reset</button></td>
+
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </fieldset>
+    </form>
+</body>
+
+</html>

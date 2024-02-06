@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script>
+        a=Number(prompt('ENter a number '))
+        main();
+        function main(){
+            res=summin(a);
+            console.log(res);
+        }
+        function summin(a){
+            if(a===0)
+            return 0;
+        else
+    return a+summin(a-1); 
+       }
+    </script>
+</head>
+<body>
+    <h1>JS Recursion</h1>
+</body>
+</html>

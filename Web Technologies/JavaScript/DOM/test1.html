@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="myDropdown">
+        <option value="">Select an option</option>
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+    </select>
+    <br>
+    <input type="text" id="myInput" readonly>
+    <input type="radio" name="myRadio" value="Option 1" id="option1">
+    <label for="option1">Option 1</label><br>
+
+    <input type="radio" name="myRadio" value="Option 2" id="option2">
+    <label for="option2">Option 2</label><br>
+
+    <input type="text" id="myInput_1" disabled>
+    <script>
+        const dropdown = document.getElementById("myDropdown");
+        const input = document.getElementById("myInput");
+
+        dropdown.addEventListener("change", () => {
+            const selectedValue = dropdown.value;
+            input.value = selectedValue;
+            input.readOnly = true;
+        });
+        const radioButtons = document.getElementsByName('myRadio');
+        const inputField = document.getElementById('myInput_1');
+
+        for (let i = 0; i < radioButtons.length; i++) {
+            radioButtons[i].addEventListener('click', function () {
+                inputField.value = this.value;
+                inputField.disabled = false;
+                inputField.readOnly = true;
+            });
+        }
+    </script>
+</body>
+
+</html>

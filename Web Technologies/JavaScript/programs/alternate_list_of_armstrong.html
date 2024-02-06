@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script>
+        function main_2() {
+            let s = Number(prompt('Enter a starting number'));
+            let e = Number(prompt('Enter a ending number'));
+            let length;
+            let c = 0;
+            let sum = 0;
+            for (let i = s; i <= e; i++) {
+                let temp = i;
+                while (i < 0) {
+                    length++;
+                    i = Math.trunc(i / 10);
+                }
+                i = temp;
+                while (i > 0) {
+                    rem = i % 10;
+                    let fact = 1;
+                    for (let j = 1; j <= length; j++) {
+                        fact = fact * rem;
+                    }
+                    sum += fact;
+                    i = Math.floor(i / 10);
+                    if (temp == sum) {
+                        c++;
+                    }
+                    if (c % 2 == 0) {
+                        console.log(sum);
+                    }
+                }
+            }
+        }
+        main_2();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

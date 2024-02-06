@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Unary Operator</title>
+        <script>
+            function operator(){
+                let a=1;
+                let b=a++ + a - a + ++a + a++ ;
+                console.log(a);
+                console.log(b);
+                console.log('------------------------');
+                for(let i=1;i<=5;i++){
+                    for(let j=1;j<=5;j++){
+                        if(j%i==0){
+                            break;
+
+                        }
+
+                        console.log(i);
+                    }
+                }
+            }
+            operator();
+            function main_2(){
+                let a=0;
+                let b=12;
+                a++;
+                c=a+ ++a - --b;
+                console.log('-----------')
+                console.log(c);
+                console.log(a);
+                console.log('---end--');
+            } 
+            main_2();                               
+        </script>
+    </head>    
+    <body>
+        <h1>Unary Operator</h1>
+
+    </body>

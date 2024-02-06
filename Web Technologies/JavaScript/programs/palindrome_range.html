@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Palindrome Range</title>
+    <script>
+        let s = Number(prompt('Enter a starting no'))
+        let e = Number(prompt('Enter a ending no'))
+        for (let i = s; i <= e; i++) {
+            let sum = 0;
+            let temp = i;
+            while (temp > 0) {
+                rem = temp % 10;
+                sum = (sum * 10) + rem;
+                temp = Math.trunc(temp / 10);
+            }
+            if (i == sum)
+                console.log(i);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>JS Palindrome Range</h1>
+</body>
+
+</html>
