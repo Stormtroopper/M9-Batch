@@ -7,20 +7,22 @@ courseTag.addEventListener("change", () => {
     if (courseTag.value === 'MERN') {
 
         feesTag.value = fees[0];
-        temp = feesTag.value
+        courseTag.style.background = 'purple'
         feesTag.readOnly = true;
     }
     else if (courseTag.value === 'Java') {
 
         feesTag.value = fees[1];
         temp = feesTag.value
+        courseTag.style.background = 'black'
+
         feesTag.readOnly = true;
     } else {
 
         feesTag.value = fees[2];
-        temp = feesTag.value
-
+        courseTag.style.background = 'green'
         feesTag.readOnly = true;
+
     }
 });
 
@@ -28,26 +30,26 @@ courseTag.addEventListener("change", () => {
 let casteTag = document.getElementsByName('gender');
 console.log(casteTag.length);
 let concessionTag = document.getElementById('concession-fees');
-let concessionArr = [10000, 5500, 12000];
+let concessionObj = {'OBC':10000,'General' :5500, 'SC':12000};
 for (let i = 0; i < casteTag.length; i++) {
-    casteTag[i].addEventListener('click', () => {
-        if (casteTag.value === 'obc') {
+    casteTag[i].addEventListener('click', function () {
+         if(casteTag[i].value=='general'){
 
-            concessionTag.value = concessionArr[0];
-            concessionTag.disabled = false
-            concessionTag.readOnly = true
+            concessionTag.value =concessionObj.General ;
+            concessionTag.disabled = false;
+            concessionTag.readOnly = true;
         }
-        else if (casteTag.value === 'oc') {
+        else if(casteTag[i].value=='obc'){
 
-            concessionTag.value = concessionArr[2];
-            concessionTag.disabled = false
-            concessionTag.readOnly = true
-        } else {
-            concessionTag.value = concessionArr[1];
-            concessionTag.disabled = false
-            concessionTag.readOnly = true
+            concessionTag.value =concessionObj.OBC ;
+            concessionTag.disabled = false;
+            concessionTag.readOnly = true;
         }
-
+        else{
+            concessionTag.value =concessionObj.SC ;
+            concessionTag.disabled = false;
+            concessionTag.readOnly = true;
+        }
     });
 }
 let paidTag = document.getElementById('paid-fees');
@@ -55,12 +57,12 @@ let dueTag = document.getElementById('due-fees');
 let btnTag = document.getElementById('btn-cal');
 let due = dueTag.value;
 
-    btnTag.addEventListener('click', (e) => {
-        e.preventDefault()
-        console.log(paidTag.value)
-        console.log(feesTag.value);
+btnTag.addEventListener('click', (e) => {
+    e.preventDefault()
+    console.log(paidTag.value)
+    console.log(feesTag.value);
 
-            due =feesTag.value- paidTag.value;
-            dueTag.value = due;
+    due = feesTag.value - paidTag.value -concessionTag.value;
+    dueTag.value = due;
 })
 
