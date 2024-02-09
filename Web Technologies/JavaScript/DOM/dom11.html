@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .one{
+            color:yellow;
+        }
+        .two{
+            padding: 30px;
+        }
+        #abc{
+            background-color: magenta;
+        }
+        .three{
+            font-size: 2.2rem;
+        }
+</style>
+</head>
+<body>
+    <h1>
+        welcome to the jungle
+    </h1>
+    <script>
+        let h1Tag=document.getElementsByTagName('h1');
+        let reqElement=h1Tag[0];
+        console.log(reqElement);
+        reqElement.setAttribute('class','one');
+        reqElement.setAttribute('id','abc');
+        console.log(reqElement.classList.add('two'));
+        console.log(reqElement.classList.remove('one'));
+        console.log(reqElement.classList.add('three'));
+
+</script>
+</body>
+</html>
