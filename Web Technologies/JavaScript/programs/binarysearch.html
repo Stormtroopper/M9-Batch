@@ -9,7 +9,8 @@
         let size=Number(prompt('Enter the number of elements'));
         let arr=[]
         for(let i=0;i<size;i++){
-            arr[i]+=Number(prompt('Enter the elements'))
+            arr[i]=Number(prompt('Enter the elements'))
+            console.log(arr[i]);
         }
         let key=Number(prompt('Enter the key to be found'))
         let start=0;
@@ -20,9 +21,9 @@
                 console.log(`Element found at position ${mid}`);
                 break;
             }
-            else if(key<arr[mid]){
+            else if(key>arr[mid]){
                 end=mid-1;
-            }else if(key>arr[mid]){
+            }else {
                 start=mid+1;
             }
         }
