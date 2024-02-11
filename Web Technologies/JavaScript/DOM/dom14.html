@@ -14,27 +14,27 @@
         <input type="password" class="form-control-md" id="password"><br><br>
         <button id="login-btn" class="btn btn-warning">Login</button>
     </form> <br>
-    <fieldset style="width:320px;height: 520px;border:2px solid;padding-left:60px;padding-top: 10px;margin-left: 260px;">
+    <fieldset style="width:320px;height: 720px;border:2px solid;padding-left:60px;padding-top: 10px;margin-left: 260px;">
         <form id="signinform">
             <label for="">Username</label><br>
             <input type="text" class="form-control-md" id="name" name="username"><br>
-            <span class="span"></span><br>
+            <span id="namespan"></span><br>
             <label for="">Email</label><br>
             <input type="email" class="form-control-md" id="email"name="email"><br>
-            <span class="span"></span><br>
+            <span id="email_span"></span><br>
             <label for="">Dob</label><br>
             <input type="date" class="form-control-md" id="date"name="date_name"><br>
-            <span class="span"></span><br>
+            <span id="date_span"></span><br>
             <label for="">Gender</label><br>
             <input type="radio" class="form-control-md" id="male-gender"name="male">Male
             <input type="radio" class="form-control-md" id="female-gender"name="female">Female<br>
-            <span class="span"></span><br>
+            <span id="gender_span"></span><br>
             <label for="">Password</label><br>
             <input type="password" class="form-control-md" id="password_2"name="password"><br>
-            <span class="span"></span><br>
+            <span id="password_span"></span><br>
             <label for="">Confirm Password</label>
             <input type="password" class="form-control-md" id="confirm-password"name="confirm_password"><br>
-            <span class="span"></span><br>
+            <span id="confirm_span"></span><br>
             <button id="signin-btn" class="btn btn-warning">Sign In</button>
         </form>
     </fieldset>
@@ -64,30 +64,29 @@ let SignInTag=document.querySelector('#signinform');
         let d=new Date()
         let converted_date=d.toDateString();
         console.log(converted_date);
-
         if(!username ||username.length<4){
-            document.getElementsByClassName('span').innerText='Name should be at least 4 characters'
-            document.getElementsByClassName('span').style.color='red';
+            document.getElementById('namespan').innerText='Name should be at least 4 characters'
+            document.getElementById('namespan').style.color='red';
         }
         if(!email || !email.includes('@')){
-            document.getElementsByClassName('span').innerText=`Email ID should contain the '@' symbol`
-            document.getElementsByClassName('span').style.color='red';
+            document.getElementById('email_span').innerText=`Email ID should contain the '@' symbol`
+            document.getElementById('email_span').style.color='red';
         }
         if(!date_name||date_name>converted_date){
-            document.getElementsByClassName('span').innerText='Date not entered'
-            document.getElementsByClassName('span').style.color='red'
+            document.getElementById('date_span').innerText='Date not entered'
+            document.getElementById('date_span').style.color='red'
         }
         if(!male || !female){
-            document.getElementsByClassName('span').innerText='Gender not selected'
-            document.getElementsByClassName('span').style.color='red';
+            document.getElementById('gender_span').innerText='Gender not selected'
+            document.getElementById('gender_span').style.color='red';
         }
         if(!password ||password.length<8 ){
             document.getElementById('password_span').innerText='Password should be at least 8 characters'
             document.getElementById('password_span').style.color='red';       
         }
         if(!confirm_password||confirm_password!==password || confirm_password.length<8){
-            document.getElementById('confirm_password_span').innerText='Invalid password confirmed'
-            document.getElementById('confirm_password_span').style.color='red';
+            document.getElementById('confirm_span').innerText='Invalid password confirmed'
+            document.getElementById('confirm_span').style.color='red';
         }
 })
 </script>    
