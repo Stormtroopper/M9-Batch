@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Promises</title>
+</head>
+<body>
+    <script>
+        let newPromise=new Promise((resolve,reject)=>{
+            let age=22;
+            if(age>=18){
+                setInterval(()=>{
+                    resolve('Eligible to vote')
+                },2000)
+            }
+            else{
+                // setTimeout(()=>{
+                    reject('Not Eligible')
+                // },2000)
+            }
+        })
+        // let newPromise2=new Promise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         resolve('You are an Adult');
+        //     },3000)
+        // })
+        // newPromise.then((data)=>{
+        //     console.log(`${data}`);
+        //     newPromise2.then((data2)=>{
+        //         console.log(data2+' Its settled');
+        //     })
+        // }).catch((e)=>{
+        //     console.log(e);
+        // }).finally(()=>{
+        //     console.log('End this bullshit');
+        // })
+        console.log(newPromise);
+        console.log('------------------Start----------------')
+        console.log('-----------End-------------');
+    </script>
+</body>
+</html>
