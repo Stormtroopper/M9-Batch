@@ -1,4 +1,5 @@
 const display=document.querySelector('#input-id')
+const enterTag=document.getElementById('sixteen-button')
 let displayValue=(input)=>{
     display.value+=input
 }

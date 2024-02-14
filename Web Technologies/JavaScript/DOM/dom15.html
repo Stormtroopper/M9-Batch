@@ -82,7 +82,7 @@
     <div class="card" style="width: 20rem;margin-left:40rem;height:35rem;margin-top: 5rem;" align="center">
         <div class="container">
             <div class="card-body">
-                <input type="text" class="form-control" id="input-id" readonly placeholder="Enter Text"><br><br>
+                <input type="text" class="form-control" id="input-id"  placeholder="Enter Text"><br><br>
                 <div class="row">
                     <div class="col" id="first-button" onclick="displayValue('7')">
                         7
@@ -135,14 +135,15 @@
                     <div class="col" id="fifteen-button" onclick="displayValue('+')">
                         +
                     </div>
+                    <div class="col" id="seventeen-button" onclick="clearValue('C')">
+                        C
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col" id="sixteen-button" onclick="calculating()">
                         =
                     </div>
-                </div>
-                <div class="row" id="seventeen-button" onclick="clearValue('C')">
-                    <div class="col">
-                        C
-                    </div>
+  
                 </div>
             </div>
         </div>

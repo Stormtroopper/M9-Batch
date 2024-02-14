@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise Methods</title>
+</head>
+<body>
+    <script>
+        let pr1=new Promise((resolve,reject)=>{
+            let num=22
+            if(num<14){
+                resolve(num*2);
+            }
+            else{
+                reject('Smaller than 14')
+            }
+        })
+        let pr2=new Promise((resolve,reject)=>{
+            setInterval(()=>{
+                resolve('Running.......')
+            })
+        },200)
+        //Promise.all() method
+        let pr_method=Promise.all([pr1,pr2]).then((data)=>console.log(data)).catch(er=>console.error(er))
+        //Promise.allSettled method
+        let pr_method2=Promise.allSettled([pr1,pr2]).then((data)=>console.log(data)).catch(er=>console.error(er))
+        //Promise.race() method
+        let pr_method3=Promise.race([pr1,pr2]).then((data)=>console.log(data)).catch(er=>console.error(er))
+        //Promise.any()
+        let pr_method4=Promise.any([pr1,pr2]).then((data)=>console.log(data)).catch(er=>console.error(er))
+
+    </script>
+</body>
+</html>

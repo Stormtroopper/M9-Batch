@@ -3,15 +3,18 @@ let stopBtn=document.getElementById('stop-button')
 let boxesTag = document.querySelectorAll('.col-1')//[]
 console.log(boxesTag);
 rowContainer.addEventListener('click', (event) => {
+    event.preventDefault();
     let row_id = event.target.id;
     console.log(row_id);
     let count;
     let new_interval;
+    let set_id;
+    let i = 0;
     if (row_id === 'play-button') {
-        let i = 0;
         // boxesTag.forEach((e)=>{
         //     e.style.backgroundColor=`rgb(${Math.trunc(Math.random()*255)},${Math.trunc(Math.random()*255)},${Math.trunc(Math.random()*255)})`
         // })
+        set_id=localStorage.setItem('id1',row_id)
         new_interval = setInterval(() => {
             if (i < boxesTag.length) {
                 boxesTag[i].style.backgroundColor = `rgb(${Math.trunc(Math.random() * 255)},${Math.trunc(Math.random() * 255)},${Math.trunc(Math.random() * 255)})`
@@ -22,6 +25,7 @@ rowContainer.addEventListener('click', (event) => {
         console.log(boxesTag);
         stopBtn.addEventListener('click',()=>{
             clearInterval(new_interval)
+ 
         })
     }
         // boxesTag[count].style.backgroundColor = `rgb(${Math.trunc(Math.random() * 255)},${Math.trunc(Math.random() * 255)},${Math.trunc(Math.random() * 255)})`

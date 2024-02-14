@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fetch Method</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .button {
+            margin-top: 23px;
+            margin-left: 125px;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="button">
+        <button class="btn btn-dark" id="btn-id">Show</button>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">username</th>
+                    <th scope="col">name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">address</th>
+
+                </tr>
+            </thead>
+            <tbody id="show-body">
+            </tbody>
+        </table>
+
+    </div>
+    <script>
+        let url = "https://jsonplaceholder.typicode.com/users"
+        let btnTag = document.querySelector('button')
+        let showTable = document.querySelector('#show-body')
+        btnTag.addEventListener('click', () => {
+            fetch(url).then(res => res.json()).then(data => {
+                console.log(data);
+                console.log(data[0].id);
+                console.log(data[0].username);
+                console.log(data[0].name);
+                displayTable(data);
+
+            }).catch(error => console.error(error))
+            function displayTable(tabledata) {
+                let rec = ``
+                tabledata.forEach(element => {
+
+                    rec += `
+           <tr>
+             <th scope="row">${element.id}</th>
+             <td>${element.username}</td>
+             <td>${element.name}</td>
+             <td>${element.email}</td>
+             <td>${element.address.street} ${element.address.city}</td>
+           </tr>
+       `
+                });
+                showTable.innerHTML = rec;
+            }
+        })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
