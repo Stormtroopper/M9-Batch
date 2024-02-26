@@ -1,39 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>JS ToDo List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        ul li {
+            list-style: none;
+            font-size: 20px;
+            font-weight: 100;
+            margin-top: 15px;
+            margin-left: 10px;
+            display: flex;
+            user-select: none;
+            cursor: pointer;
+            background-size: cover;
+        }
+
+        ul li:before {
+            content: '';
+            height: 30px;
+            width: 30px;
+            border-radius: 40%;
+            background-image: url('../DOM/circle-regular-24.png');
+            background-size: cover;
+            background-position: center;
+            top: 12px;
+            left: 7px;
+        }
+
+        ul li.checked {
+            color: #555;
+            text-decoration: line-through;
+        }
+
+        ul li.checked::before {
+            content: '';
+            height: 30px;
+            width: 30px;
+            border-radius: 40%;
+            background-image: url('../DOM/check-circle-solid-24.png');
+            background-size: cover;
+            background-position: center;
+            top: 12px;
+            left: 7px;
+        }
+
+        ul li span {
+            position: relative;
+            right: 0;
+            top: 5px;
+            width: 43px;
+            height: 43px;
+            font-size: 20px;
+            color: #555;
+            line-height: 35px;
+            text-align: center;
+            border-radius: 45%;
+        }
+
+        ul li span:hover {
+            background: #edeef0;
+        }
+    </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg bg-dark ">
         <div class="container-fluid ">
             <a href="#" class="navbar-brand ">To Do List</a>
         </div>
     </nav>
-       <div class="card" style="width:50rem;margin: 20px;">
+    <div class="card" style="width:50rem;margin: 20px;">
         <div class="card-body" id="display">
             <div class="card-header text-center">
                 <h4>To Do List</h4>
                 <div class="input-group mb-3 ">
                     <input type="text" class="form-control" id='todo-id'>
                 </div>
-                <button type="submit"class="btn btn-success btn-md" id="submit-btn">Submit</button>
+                <button class="btn btn-success btn-md" id="submit-btn">Submit</button>
             </div>
-            <div class="card-header text-center">
+            <ul id="todo-content">
+                <li class="checked">Newone</li>
+                <li>Newone</li>
 
-            </div>
+            </ul>
         </div>
-    </div>    
+    </div>
 </body>
 <script>
-    let passwordTag=document.getElementById('todo-id')
-    let submitTag=document.getElementById('submit-id')
-    passwordTag.addEventListener('submit',(e)=>{
+    let passwordTag = document.getElementById('todo-id')
+    let contentTag = document.getElementById('todo-content')
+    let submitTag = document.getElementById('submit-btn')
+    submitTag.addEventListener('click', (e) => {
         e.preventDefault();
-        let task=submitTag
-
+        if (passwordTag.value === '') {
+            console.log('Write something');
+        }
+        else {
+            let li = document.createElement('li')
+            li.innerHTML = passwordTag.value
+            contentTag.appendChild(li)
+            let span = document.createElement('span')
+            span.innerHTML = `<i class='bx bx-window-close' ></i>`
+            li.appendChild(span)
+        }
+        passwordTag.value = ''
+        saveData();
     })
+    contentTag.addEventListener('click', (e) => {
+        if (e.target.tagName === 'LI') {
+            e.target.classList.toggle('checked')
+            saveData();
+        } else if (e.target.tagName === 'SPAN') {
+            e.target.parentElement.remove()
+            saveData();
+        }
+    }, false)
+    function saveData(){
+        localStorage.setItem('todo_data', contentTag.textContent)
+    }
+    function saveTask() {
+
+        contentTag.innerHTML = localStorage.getItem('data')
+    }
+    saveTask();
 </script>
+
 </html>

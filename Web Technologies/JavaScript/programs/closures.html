@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Closures</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    h1{
+        display: inline;
+        width: 20%;
+        height: 33px;
+    }
+    span{
+        display: block;
+    }
+    span::after{
+        content:'aYE ITS ALL good' ;
+        color:pink;
+    }
+</style>
+</head>
+<body>
+    <h1>Jsclosures 
+    </h1>
+    <span> Intensified </span>
+    <h2> Another Block </h2>
+    <script>
+        let bankAccount=(initial)=>{
+            let balance=initial
+            return{
+                getBalance:function(){
+                    return balance
+                },
+            deposit:function(amount){
+                balance+=amount
+                return balance
+            },
+            };
+        };
+        let acc=bankAccount(20)
+        console.log(acc.getBalance())
+        console.log(acc.deposit(200));
+    </script>
+</body>
+</html>

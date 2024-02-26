@@ -12,37 +12,53 @@
             box-sizing: border-box;
         }
 
+        #select-tag {
+            width: 100px;
+        }
+
         .button {
-            margin-top: 23px;
-            margin-left: 125px;
+            display: flex;
+            flex-direction: row;
+            column-gap: 5px;
+            margin-top: 30px;
             justify-content: center;
+            margin-left: 90px;
         }
     </style>
 </head>
 
 <body>
+    <button class="btn btn-dark" id="btn-id">Show</button>
     <div class="button">
-        <button class="btn btn-dark" id="btn-id">Show</button>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">username</th>
-                    <th scope="col">name</th>
-                    <th scope="col">email</th>
-                    <th scope="col">address</th>
-
-                </tr>
-            </thead>
-            <tbody id="show-body">
-            </tbody>
-        </table>
-
+        <select class="form-select" id="select-tag">
+            <option selected value="default">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="All">All</option>
+        </select>
     </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">username</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">email</th>
+                <th scope="col">address</th>
+                <th scope="col">gender</th>
+
+            </tr>
+        <tbody id="show-body">
+        </tbody>
+    </table>
+
     <script>
         let url = "https://jsonplaceholder.typicode.com/users"
+        let url2 = "https://dummyjson.com/users"
         let btnTag = document.querySelector('button')
+        let selectTag = document.querySelector('#select-tag')
         let showTable = document.querySelector('#show-body')
+        // let tableContent = document.querySelector('table')
         btnTag.addEventListener('click', () => {
             fetch(url).then(res => res.json()).then(data => {
                 console.log(data);
@@ -63,6 +79,53 @@
              <td>${element.name}</td>
              <td>${element.email}</td>
              <td>${element.address.street} ${element.address.city}</td>
+             <td>NA</td>
+            
+             </tr>
+       `
+                });
+                showTable.innerHTML = rec;
+            }
+        })
+        selectTag.addEventListener('click', () => {
+            fetch(url2).then(res => res.json()).then(data1 => {
+                console.log(data1.users);
+                let arr = data1.users;
+                console.log(arr);
+                let maleFiltered = arr.filter((i) => {
+                    return i.gender === 'male'
+                })
+                let femaleFiltered = arr.filter((i) => {
+                    return i.gender === 'female'
+                })
+                console.log(maleFiltered)
+                if (selectTag.value === 'All') {
+
+                    displayTable1(data1.users)
+                }
+                else if (selectTag.value === 'Male') {
+
+                    displayTable1(maleFiltered)
+                }else if(selectTag.value ==='Female'){
+                    displayTable1(femaleFiltered)
+
+                }else if(selectTag.value='default'){
+                    throw "Wrong Gender"
+                }
+            }).catch(e=>console.log(e))
+            function displayTable1(tabledata) {
+                let rec = ``
+                tabledata.forEach(element => {
+
+                    rec += `
+
+           <tr>
+             <th scope="row">${element.id}</th>
+             <td>${element.username}</td>
+             <td>${element.firstName}</td>
+             <td>${element.email}</td>
+             <td>${element.address.address} ${element.address.city}</td>
+             <td>${element.gender}</td>
            </tr>
        `
                 });

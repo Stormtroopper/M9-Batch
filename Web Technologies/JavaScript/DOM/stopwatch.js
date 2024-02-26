@@ -7,6 +7,7 @@ let ms = 0
 let s = 0
 let m = 0
 let count = 0;
+let new_interval_1;
 let setTime = () => {
     ms++;
     if (ms >= 100) {
@@ -29,25 +30,36 @@ let countLap = () => {
     count++;
 
     lapcount.innerHTML = `Laps:${count}<br>`;
+    console.log(lapcount.innerHTML);
 }
 playBtn.addEventListener('click', () => {
+if(!new_interval_1){
 
-    setInterval(setTime, 10)
+    new_interval_1=setInterval(setTime, 10)
+}
 })
 resetBtn.addEventListener('click', () => {
+   if(new_interval_1){
+
+       clearInterval(setTime)
+       ms = m = s = 0;
+       watchTag.innerText = "00:00.00";
+       countLap()
+   }else{
     clearInterval(setTime)
     ms = m = s = 0;
     watchTag.innerText = "00:00.00";
-    countLap()
+   }
 
 })
 let newone=stopBtn.addEventListener('click', () => {
+    if (new_interval_1) {
 
-    if (setTime) {
-
-        clearInterval(setTime)
-        watchTag.innerText = "00:00.00";
-
+        clearInterval(new_interval_1)
+        new_interval_1 = undefined
+    }
+    else{
+        new_interval_1=setInterval(setTime, 10)
     }
 console.log(newone);
 })
