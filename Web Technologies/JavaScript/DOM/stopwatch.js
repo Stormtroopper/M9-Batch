@@ -28,7 +28,6 @@ let setTime = () => {
 }
 let countLap = () => {
     count++;
-
     lapcount.innerHTML = `Laps:${count}<br>`;
     console.log(lapcount.innerHTML);
 }
@@ -52,7 +51,7 @@ resetBtn.addEventListener('click', () => {
    }
 
 })
-let newone=stopBtn.addEventListener('click', () => {
+stopBtn.addEventListener('click', () => {
     if (new_interval_1) {
 
         clearInterval(new_interval_1)
@@ -61,5 +60,4 @@ let newone=stopBtn.addEventListener('click', () => {
     else{
         new_interval_1=setInterval(setTime, 10)
     }
-console.log(newone);
 })

@@ -7,11 +7,14 @@
 
 </head>
 <body>
+    <button class="btn btn-danger" id="mode-btn">Modes</button>
     <h1 class="text-lg">Js Storage <span id="display"></span></h1>
-    <button id="likes-btn" class="btn btn-outline-warning">Likes</button>
+    <button id="likes-btn" class="btn btn-outline-danger">Likes</button>
     <script>
         let spanTag=document.getElementById('display')
         let btnTag=document.getElementById('likes-btn')
+        let mode_btn=document.getElementById('mode-btn')
+        let modes='light'
         let count=localStorage.getItem('likes')?localStorage.getItem('likes'):0;
         spanTag.textContent=count;
         btnTag.addEventListener('click',()=>{
@@ -19,6 +22,20 @@
             localStorage.setItem('likes',count);
             spanTag.textContent=count;
         })
+        mode_btn.addEventListener('click',()=>{
+            if(modes==='light'){
+                modes='black'
+
+                document.querySelector('h1').style.color='white'
+            document.body.style.backgroundColor='black'
+        }else{
+            modes='light'
+            document.querySelector('h1').style.color='black'
+            document.body.style.backgroundColor='white'
+
+        }
+            })
+        
     </script>
 </body>
 </html>

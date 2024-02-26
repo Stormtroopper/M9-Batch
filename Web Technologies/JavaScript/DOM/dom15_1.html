@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(38, 38, 113);
+        }
+
+        .calculator {
+            height: 78vh;
+            width: 445px;
+            margin: 55px auto;
+            box-shadow: 0 0 14px burlywood;
+            background-color: rgb(133, 128, 128);
+        }
+
+        .btn {
+            height: 75px;
+            width: 75px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px black;
+            outline: none;
+            color: white;
+            font-size: 30px;
+        }
+
+        .buttons>div {
+            display: flex;
+            justify-content: center;
+            margin-top: 42px;
+            gap: 25px;
+        }
+
+        input[type="text"] {
+            width: 440px;
+            height: 10vh;
+            font-size: 36px;
+            background-color: transparent;
+            box-shadow: 0 0 15px blue;
+            text-align: right;
+            font-weight: bold;
+            color: rgb(255, 235, 235);
+        }
+
+        .operator {
+            background-color: greenyellow;
+            color: rgb(39, 62, 54);
+        }
+
+        .equal {
+            background-color: rgb(223, 146, 4);
+        }
+
+        .del {
+            background-color: rgb(156, 19, 19);
+        }
+
+        .all-clear {
+            background-color: rgb(115, 28, 46);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" id="input">
+        <div class="buttons">
+            <div>
+                <button class="btn all-clear">AC</button>
+                <button class="btn del">DEL</button>
+                <button class="btn operator">/</button>
+                <button class="btn operator">%</button>
+
+            </div>
+            <div>
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn operator">*</button>
+
+            </div>
+            <div>
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn operator">+</button>
+
+            </div>
+            <div>
+                <button class="btn">0</button>
+                <button class="btn">3</button>
+                <button class="btn">.</button>
+                <button class="btn equal">=</button>
+
+            </div>
+
+        </div>
+    </div>
+    <script src="calculator_2.js"></script>
+</body>
+
+</html>

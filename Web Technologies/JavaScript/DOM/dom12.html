@@ -101,7 +101,6 @@
     let contentTag = document.getElementById('todo-content')
     let submitTag = document.getElementById('submit-btn')
     submitTag.addEventListener('click', (e) => {
-        e.preventDefault();
         if (passwordTag.value === '') {
             console.log('Write something');
         }
@@ -110,7 +109,7 @@
             li.innerHTML = passwordTag.value
             contentTag.appendChild(li)
             let span = document.createElement('span')
-            span.innerHTML = `<i class='bx bx-window-close' ></i>`
+            span.innerHTML = `<i class='bx bx-window-close'></i>`
             li.appendChild(span)
         }
         passwordTag.value = ''
@@ -120,7 +119,9 @@
         if (e.target.tagName === 'LI') {
             e.target.classList.toggle('checked')
             saveData();
-        } else if (e.target.tagName === 'SPAN') {
+            
+        }
+         else if (e.target.tagName === 'SPAN') {
             e.target.parentElement.remove()
             saveData();
         }
@@ -130,7 +131,7 @@
     }
     function saveTask() {
 
-        contentTag.innerHTML = localStorage.getItem('data')
+        contentTag.innerHTML = `<h1>${localStorage.getItem('todo_data')}<h1>`
     }
     saveTask();
 </script>
