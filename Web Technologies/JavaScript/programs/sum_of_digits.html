@@ -1,16 +1,23 @@
 <html>
 <head>
     
-    <title>Swapping No </title>
+    <title>Sum of Digits </title>
     <script>
         let num=Number(prompt('enter the number'));
-        let sum=0;
+        let sum1=0,sum2=0;
         while(num>0){
             let rem=num%10;
-            sum+=rem;
+            if(rem%2==0){
+
+                sum1+=rem;
+            }else{
+                sum2+=rem;
+            }
             num=Math.trunc(num/10);
         }
-        console.log(`Sum of digits ${sum}`);
+        console.log(`Sum of even digits ${sum1}`);
+        console.log(`Sum of odd digits ${sum2}`);
+
     </script>
 </head>
 <body></body>

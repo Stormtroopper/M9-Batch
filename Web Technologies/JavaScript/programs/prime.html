@@ -24,19 +24,25 @@
         let a = Number(prompt('Enter starting number'));
         let b = Number(prompt('Enter ending number'));
         let flag;
-        for (let i = a; i <= b; i++) {
-            if (i < 2)
-                continue;
-            flag = true;
-            for (j = 2; j <= Math.trunc(i / 2); j++) {
-                if (i % j === 0) {
-                    flag = false;
-                    break;
+        if(a<b){
+
+            for (let i = a; i <= b; i++) {
+                if (i < 2)
+                    continue;
+                    flag=true
+                for (j = 2; j <= Math.trunc(i / 2); j++) {
+                    if (i % j === 0) {
+                        flag = false;
+                        break;
+                    }
+                }
+                if (flag) {
+                    console.log(i);
                 }
             }
-            if (flag) {
-                console.log(i);
-            }
+        }else{
+
+            console.error('Invalid Input');
         }
     </script>
 </head>

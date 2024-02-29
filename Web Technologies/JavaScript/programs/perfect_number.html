@@ -4,25 +4,25 @@
 <head>
     <title>Document</title>
     <script>
-        function main() {
-            let num = Number(prompt('Enter a number'))
-            let sum = 0;
-            if (num <= 0) console.log('Invalid Input.')
-            return
-            for (let i = 1; i < num; i++) {
-                if (num % i == 0) {
-                    sum += num
-                }
-            }
-            if (sum == num) {
-                console.log(`${num} is a perfect number`)
-            }
-            else {
-                console.log(`${num} is not a perfect number`)
+    let num =Number(prompt('Enter a number'));
+    let checkPerfectNumber = (num) => {
+   if(num === 1) {
+      return false;
+   };
+   let sum = 1;
+   for(let i = 2; i <= Math.floor(Math.sqrt(num)); i++){
+      if(num % i === 0) {
+         sum = sum + i + num / i; if(sum > num) {
+                return false;
+         }
+      };
+   };
+return sum ===num;
+};
+console.log(
 
-            }
-        }
-        main();
+    checkPerfectNumber(num)
+);
     </script>
 </head>
 

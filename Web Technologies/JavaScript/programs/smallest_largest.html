@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>JS Smallest And Largest Digit</h1>
+<script>
+   let num=Number(prompt('Enter a number'));
+   let largest=0,smallest=0;
+   let rem,rem2;
+   let temp=num;
+    while(num>0){
+        rem=Math.trunc(num%10);
+        if(rem>largest){
+            largest=rem;
+        }
+        num=Math.trunc(num/10);
+    } 
+    smallest=largest;
+    num=temp;
+    while(num>0){
+        rem2=Math.trunc(num%10);
+     
+        if(rem2<smallest ){
+            smallest=rem2;
+        }
+        num=Math.trunc(num/10);
+    }
+    console.log('Largest digit '+largest);
+    console.log('Smallest digit '+smallest);
+</script>    
+</body>
+</html>

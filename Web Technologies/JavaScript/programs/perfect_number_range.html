@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Perfect Number</h1>
+ <script>
+    function rangePerfect(){
+        let n=Number(prompt('Enter Starting Range'))
+        let m=Number(prompt('Enter Ending Range'))
+        let s=0;
+        for(let i=n;i<=m;i++){
+           for(let j=1;j<i;j++){
+            if(i%j===0){
+                s+=j;
+            }
+        }
+        if(s==i){
+         console.log(i+' is a Perfect number');
+        }else{
+            console.log(i+' is not a Perfect number');
+        }
+        }
+    }
+    rangePerfect();
+ </script>   
+</body>
+</html>
