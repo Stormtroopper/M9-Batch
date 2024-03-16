@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function reverseWords(inputString) {
+      // Split the input string into an array of words
+      const words = inputString.split(' ');
+
+      // Reverse each word in the array
+      const reversedWords = words.map(word => reverseWord(word));
+
+      // Join the reversed words back into a string
+      const outputString = reversedWords.join(' ');
+
+      return outputString;
+    }
+
+    function reverseWord(word) {
+      // Convert the word into an array of characters, reverse it, and join back into a string
+      return word.split('').reverse().join('');
+    }
+
+    // Example usage
+    const inputString = "hello am raunaq";
+    console.log(reverseWords(inputString));
+    console.log('----------------------');
+    let s2 = inputString.split(' ')
+    let rev = ""
+    for (let i = 0; i < s2.length; i++) {
+      let output = " ";
+      let res = s2[i]
+      for (let j = res.length - 1; j >= 0; j--) {
+        output += res.charAt(j);
+      }
+      rev += output + " "
+    }
+    console.log(rev);
+    console.log('-------------------');
+    let total = " "
+    let op = ""
+    for (let k = 0; k < inputString.length; k++) {
+      if (inputString.charAt(k) !== ' ') {
+        total = inputString.charAt(k) + total;
+      } else {
+        op += total + " ";
+        total = ""
+      }
+      if (k == inputString.length - 1) {
+        op += total
+      }
+    }
+    console.log(total);
+  </script>
+</body>
+
+</html>

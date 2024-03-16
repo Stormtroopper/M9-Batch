@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Creating Star</title>
+</head>
+
+<body>
+    <h1>JS Star Program</h1>
+    <script>
+        let res = ""
+        let res2 = ""
+        let res3 = ""
+        let res4 = ""
+        let res5 = ""
+        let res6 = ""
+        let res7 = ""
+        let res8 = ""
+        let res9 = ""
+        let res10 = ""
+        let res11 = ""
+        let res12 = ""
+        let res13 = ""
+        let res14 = ""
+        let res15 = ""
+        let res16 = ""
+        let res17 = ""
+
+        let num = Number(prompt('Enter the  number of rows to print'));
+        for (let i = num; i >= 1; i--) {
+            for (let j = 1; j <= num; j++) {
+                res += `* `;
+            }
+            res += '\n'
+        }
+        for (let i = num; i >= 1; i--) {
+            for (let j = 1; j <= num; j++) {
+                res2 += `${j} `;
+            }
+            res2 += '\n'
+        }
+        for (let i = 1; i <= num; i++) {
+            for (let j = 1; j <= num; j++) {
+                if (i % 2 !== 0) {
+
+                    res3 += `* `;
+                }
+            }
+            res3 += '\n'
+        }
+        for (let i = 1; i <= num; i++) {
+            for (let j = 1; j <= num; j++) {
+                if (i < j || i === j) {
+                    res4 += ` `
+                } else {
+                    res4 += `* `
+                }
+            }
+            res4 += '\n'
+        }
+        for (let i = 1; i <= num; i++) {
+            for (let j = 1; j <= num; j++) {
+                if (i === j || i + j === num + 1) {
+                    res5 += `* `
+                }
+            }
+            res5 += '\n'
+        }
+        for (let i = 1; i <= num; i++) {
+            for (let j = 1; j <= num; j++) {
+                if (i >= j) {
+                    res6 += `${j} `
+                }
+            }
+            res6 += '\n'
+        }
+        for (let i = 1; i <= num; i++) {
+            for (let j = i; j >= 1; j--) {
+                res7 += `${j} `
+            }
+            res7 += '\n'
+        }
+        for (let i = num; i >= 1; i--) {
+            for (let j = num; j >= i; j--) {
+                res8 += `${j} `
+            }
+            res8 += '\n'
+        }
+        for (let i = num; i >= 1; i--) {
+            for (let j = i; j <= num; j++) {
+                res9 += `${j} `
+            }
+            res9 += '\n'
+        }
+        for (let i = 1; i <= num; i++) {
+            for (let j = i; j <= num; j++) {
+                if (i > j) {
+
+                    res10 += ` `
+                }
+                else {
+                    res10 += `${j} `
+                }
+
+            }
+            res10 += '\n'
+        }
+        for (let i = 1; i <= num; i++) {
+            for (let j = 1; j <= num; j++) {
+                if (i > j) {
+                    res11 += ` `
+
+                } else {
+                    res11 += `${j}`
+                }
+            }
+            res11 += '\n'
+        }
+        for (let i = 1; i <= num; i++) {
+            for (let j = 1; j <= num; j++) {
+                if (i < j) {
+                    res12 += `${j}`
+                } else {
+                    res12 += ` `
+                }
+            }
+            res12 += '\n'
+        }
+        for (let i = 1; i <= num; i++) {
+            for (let j = 1; j <= i; j++) {
+                if (i > j) {
+                    res13 += `${j}`
+                } else {
+                    res13 += ` `
+                }
+            }
+            res13 += '\n'
+        }
+        // for(let i=1;i<=num;i++){
+        //     for(let j=1;j<=num;j++){
+        //         if()
+        //     }
+        // }
+        let spaces = num - 1;
+        for (let i = 1; i <= num; i++) {
+            for (let j = 1; j <= spaces; j++) {
+                res14 += ` `
+            }
+            for (let j = 1; j <= i; j++) {
+                res14 += `${j}`
+            }
+            res14 += '\n'
+            spaces--;
+        }
+        spaces = num - 1;
+        for (let i = num; i >= 1; i--) {
+            for (let j = 1; j <= spaces; j++) {
+                res15 += ` `
+            }
+            for (let j = num; j >= i; j--) {
+                res15 += `${j}`
+            }
+            res15 += '\n'
+            spaces--;
+        }
+        spaces = num - 1;
+        for (let i = num; i >= 1; i--) {
+            for (let j = 1; j <= spaces; j++) {
+                res16 += ` `
+            }
+            for (let j = i; j <= num; j++) {
+                res16 += `${j}`
+            }
+            res16 += '\n'
+            spaces--;
+        }
+        for (let i = num; i >= 1; i--) {
+
+            for (let j = i; j <= num; j++) {
+                res17 += `${j}`
+            }
+            res17 += '\n'
+
+        }
+        console.log(res);
+        console.log('----------');
+        console.log(res2);
+        console.log('-----------');
+        console.log(res3);
+        console.log('-----------');
+        console.log(res4);
+        console.log('-----------');
+        console.log(res5);
+        console.log('-----------');
+        console.log(res6);
+        console.log('-----------');
+        console.log(res7);
+        console.log('-----------');
+        console.log(res8);
+        console.log('-----------');
+        console.log(res9);
+        console.log('-----------');
+        console.log(res10);
+        console.log('-----------');
+        console.log(res11);
+        console.log('-----------');
+        console.log(res12);
+        console.log('-----------');
+        console.log(res13);
+        console.log('-----------');
+        console.log(res14);
+        console.log('-----------');
+        console.log(res15);
+        console.log('-----------');
+        console.log(res16);
+        console.log('-----------');
+        console.log(res17);
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

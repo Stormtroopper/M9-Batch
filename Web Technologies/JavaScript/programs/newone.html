@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function countCharacterOccurrences(inputString) {
+            // Create an object to store character counts
+            const charCount = {};
+
+            // Loop through each character in the string
+            for (const char of inputString) {
+                // Increment the count for each character in the object
+                charCount[char] = (charCount[char] || 0) + 1;
+            }
+
+            // Print the result
+            for (const char in charCount) {
+                console.log(`Character '${char}' occurs ${charCount[char]} times`);
+            }
+        }
+
+        // Example usage
+        const inputString = "madam";
+        countCharacterOccurrences(inputString);
+    </script>
+</body>
+
+</html>

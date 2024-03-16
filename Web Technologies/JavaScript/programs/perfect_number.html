@@ -7,17 +7,17 @@
     let num =Number(prompt('Enter a number'));
     let checkPerfectNumber = (num) => {
    if(num === 1) {
-      return false;
+      return num+' is not a perfect number';
    };
    let sum = 1;
-   for(let i = 2; i <= Math.floor(Math.sqrt(num)); i++){
+   for(let i = 2; i <= Math.trunc(Math.sqrt(num)); i++){
       if(num % i === 0) {
          sum = sum + i + num / i; if(sum > num) {
-                return false;
+                return num+' is not a perfect number'
          }
       };
    };
-return sum ===num;
+return sum ===num?`${num} is a perfect number`:`${num} is not a perfect number`;
 };
 console.log(
 

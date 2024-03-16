@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Special Number</title>
+</head>
+
+<body>
+    <script>
+        let num = Number(prompt('Number to entered'))
+        let sum = 0;
+        let rem, rem2;
+        let rev=0;
+        let temp = num;
+        
+        while (num > 0) {
+            rem = Math.trunc(num % 10);
+            sum += rem;
+            num = Math.trunc(num / 10);
+        }
+        temp=sum;
+        while(sum>0){
+            let res=sum%10;
+            rev=(rev*10)+res;
+            sum=Math.trunc(sum/10)
+        }
+        if(temp===rev){
+            console.log('Its a special number');
+        }else{
+            console.log('Its not a special number');
+        }
+        // console.log(total);
+
+    </script>
+</body>
+
+</html>

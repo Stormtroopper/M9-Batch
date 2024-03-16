@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JS Pattern</h1>
+    <script>
+        let number = Number(prompt('enter number of rows to print:'));
+        let res = 0;
+        let res2 = 0;
+        let res3 = "";
+        let res4 = "";
+        let res5 = "";
+
+        let k = 1;
+        for (let i = 1; i <= number; i++) {
+            for (let j = 1; j <= number; j++) {
+
+                res += k;
+                res += "\t"
+                k++;
+            }
+            res += '\n'
+        }
+
+
+
+        for (let i = 1; i <= number; i++) {
+            let m = number * i;
+            if (i % 2 !== 0) {
+                for (let j = 1; j <= number; j++) {
+                    let temp = ((i - 1) * number) + j;
+                    res2 += temp;
+                    res2 += "\t"
+                    temp++;
+                }
+            }
+            else {
+                for (let j = 1; j <= number; j++) {
+
+                    res2 += m;
+                    res2 += "\t"
+                    m--;
+                }
+
+            }
+            res2 += '\n'
+        }
+
+        for (let i = 1; i <= number; i++) {
+            // printing spaces
+            for (let j = 1; j <= number - i; j++) {
+                res3 += " ";
+            }
+            // printing star
+            for (let k = 1; k <= 2 * i - 1; k++) {
+                if (k === 1 || k === 2 * i - 1 || i === number) {
+
+                    res3 += "*";
+                } else {
+                    res3 += " "
+                }
+            }
+            res3 += "\n";
+        }
+        for (let i = 1; i <= number*number; i++) {
+            // printing spaces
+            for (let j = 1; j <= number - i; j++) {
+                res4 += " ";
+            }
+            // printing star
+            for (let k = 1; k <= 2 * i - 1; k++) {
+                res4 += "*";        
+            }
+            
+        res4 += "\n";
+        }
+        for (let i = 1; i <= number; i++) {
+            // printing spaces
+            for (let j = 1; j <= number - i; j++) {
+                res5 += " ";
+            }
+            // printing star
+            for (let k = 1; k <= 2 * i - 1; k++) {
+                if (k === 1 || k === 2 * i - 1 ) {
+
+                    res5 += "*";
+                } else {
+                    res5 += " "
+                }
+            }
+            res5 += "\n";
+        }
+
+        console.log(res);
+        console.log('---------');
+        console.log(res2);
+        console.log('---------');
+        console.log(res3);
+        console.log('---------');
+        console.log(res4);
+        console.log('---------');
+        console.log(res5);
+
+
+
+    </script>
+</body>
+
+</html>

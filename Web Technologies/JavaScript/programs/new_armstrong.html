@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Armstrong</h1>
+<script>
+    let num=Number(prompt('Enter a number'))
+    let sum=0;
+    let temp=num;
+    let rem;
+    let c=0;
+while(num>0){
+    c++;
+    num=Math.trunc(num/10);
+}
+num=temp;
+while(num>0){
+    let fact=1;
+    let rem=Math.trunc(num%10)
+    for(let i=0;i<c;i++){
+        fact*=rem;
+    }
+    num=Math.trunc(num/10)
+    sum+=fact;
+}
+console.log(typeof(sum));
+
+    if(temp===sum){
+        console.log(`${temp} is an armstrong number`);
+    }else{
+        console.log(`${temp} is not an armstrong number`);
+    }
+</script>    
+</body>
+</html>

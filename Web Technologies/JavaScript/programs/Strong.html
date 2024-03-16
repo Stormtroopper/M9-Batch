@@ -11,13 +11,16 @@
             let temp = num;
             while (num > 0) {
                 let fact = 1;
-                for (let i = rem; i <= 1; i++) {
+                rem=Math.trunc(num%10)
+                for (let i = rem; i >= 1; i--) {
                     fact = fact * i;
+                    console.log(fact);
+                    console.log('------');
+                }
                     sum += fact;
                     num = Math.trunc(num / 10);
-                }
             }
-            if (temp == num) {
+            if (temp == sum) {
                 console.log("Strong number");
             } else {
                 console.log('Not a strong number')

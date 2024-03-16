@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Js Strings Programs</h1>
+    <script>
+        let str = prompt('Enter a string');
+        //Reversed String
+        let res = ""
+        for (let i = str.length - 1; i >= 0; i--) {
+            res += str.charAt(i)
+        }
+        console.log('Reversed string ' + res);
+        // Palindrome String
+        let j = 0;
+        let k = str.length - 1;
+        const palindrome = (str) => {
+            while (j < k) {
+                flag = true;
+                if (str.charAt(j) === str.charAt(k)) {
+                    j++;
+                    k--;
+
+                } else {
+                    flag = false;
+                    return flag
+                }
+            }
+            if (flag)
+                return true
+        }
+        console.log(palindrome(str));
+        // while (j < k) {
+        //     flag = true;
+        //     if (str.charAt(j) === str.charAt(k)) {
+        //         j++;
+        //         k--;
+
+        //     } else {
+        //         flag = false;
+        //         console.log(str +' is not a palindrome');
+        //         break;
+        //     }
+        // }
+        // if (flag)
+        //     console.log(str +'is a Palindrome');
+        //substrings present
+        let res2 = ""
+        for (let i = 0; i < str.length; i++) {
+            for (let j = i + 1; j < str.length; j++) {
+                res2 = str.slice(i, j + 1)
+                console.log(res2);
+            }
+        }
+        console.log('------------------------------------');
+        let res3 = ""
+        for (let i = 0; i < str.length; i++) {
+            for (let j = i + 1; j < str.length; j++) {
+                res3 = str.slice(i, j + 1)
+                if (palindrome(res3)) {
+
+                    console.log(res3);
+                }
+            }
+        }
+        //remove duplicate characters in a string
+        let idx;
+        let dup = ""
+        for (let i = 0; i < str.length; i++) {
+            let c = str.charAt(i);
+            idx = str.indexOf(c, i + 1);
+            if (idx == -1) {
+                dup += c;
+            }
+        }
+        console.log(dup);
+        //program to print the number of occurrences of a character in a given string
+
+        let count=0
+        let max=0,min=0
+        let ch=[...str]
+        let newone=""
+        let newone2=""
+        for(let i=0;i<str.length;i++){
+            for(let j=i+1;j<str.length;j++){
+                if(str[i]==str[j]){
+                    count++;
+
+                }
+            }
+            if(count===0){
+                console.log("non-repeated character "+ch[i]);
+            }
+            if(count>max && ch[i]!=" "){
+                max=count;
+                newone=ch[i]
+            }
+            min=max
+            if(count<min && ch[i]!=" "){
+                min=count;
+                newone2=ch[i]
+                
+            }
+        }
+        console.log(newone+":"+max);
+        console.log(newone2+":"+min);
+
+// program tp print vowels
+        let l=0;
+        let c=[...str]
+        for(let i=0;i<c.length;i++){
+            let ch=c[i]
+            if(ch==="a"||ch==="e"||ch==="i"||ch==="o"||ch==="u"){
+                l++;
+            }
+        }
+        console.log("No of vowels "+l);
+    </script>
+</body>
+
+</html>
