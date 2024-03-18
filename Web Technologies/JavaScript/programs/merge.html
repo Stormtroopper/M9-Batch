@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let arr=[12,3,34,20,22]
+    let brr=[4,5,3,12,20,5]
+    let dup=[]
+    let c=arr.concat(brr);
+    console.log('Merged array '+c);
+    for(let i=0;i<c.length;i++){
+        let idx=c.indexOf(c[i],i+1)
+        if(idx===-1)
+        dup.push(c[i])
+    }
+    console.log(dup);
+</script>    
+</body>
+</html>

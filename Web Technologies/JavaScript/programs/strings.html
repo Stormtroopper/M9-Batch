@@ -80,45 +80,23 @@
         console.log(dup);
         //program to print the number of occurrences of a character in a given string
 
-        let count=0
-        let max=0,min=0
-        let ch=[...str]
-        let newone=""
-        let newone2=""
-        for(let i=0;i<str.length;i++){
-            for(let j=i+1;j<str.length;j++){
-                if(str[i]==str[j]){
-                    count++;
-
-                }
-            }
-            if(count===0){
-                console.log("non-repeated character "+ch[i]);
-            }
-            if(count>max && ch[i]!=" "){
-                max=count;
-                newone=ch[i]
-            }
-            min=max
-            if(count<min && ch[i]!=" "){
-                min=count;
-                newone2=ch[i]
-                
-            }
+        let charcount = {}
+        for (let s of str) {
+            charcount[s] = (charcount[s] || 0) + 1
         }
-        console.log(newone+":"+max);
-        console.log(newone2+":"+min);
-
-// program tp print vowels
-        let l=0;
-        let c=[...str]
-        for(let i=0;i<c.length;i++){
-            let ch=c[i]
-            if(ch==="a"||ch==="e"||ch==="i"||ch==="o"||ch==="u"){
+        for (let i in charcount) {
+            console.log(i + ' occurs ' + charcount[i] + " times.")
+        }
+        // program to print vowels
+        let l = 0;
+        let c = [...str]
+        for (let i = 0; i < c.length; i++) {
+            let ch = c[i]
+            if (ch === "a" || ch === "e" || ch === "i" || ch === "o" || ch === "u") {
                 l++;
             }
         }
-        console.log("No of vowels "+l);
+        console.log("No of vowels " + l);
     </script>
 </body>
 

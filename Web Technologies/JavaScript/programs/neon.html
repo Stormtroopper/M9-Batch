@@ -9,7 +9,7 @@
         let sum = 0;
         num = num * num;
         while (num > 0) {
-            let rem = num % 10;
+            let rem = Math.trunc(num % 10);
             sum += rem;
             num = Math.trunc(num / 10);
         }

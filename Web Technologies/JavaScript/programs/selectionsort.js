@@ -1,6 +1,7 @@
 let arr=[];
 let n=Number(prompt('Enter the size of the array'))
-for(let k=0;k<n;k++){
+let k=0
+for( k in n){
     arr[k]=Number(prompt('Enter the elements'))
 }
 for(let i=0;i<arr.length;i++){
