@@ -6,7 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
-
+#c-id:hover{
+  transform: perspective(200px) translateX(2.3);
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -34,4 +36,26 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#button-nav:hover{
+transform: perspective(200px) scale(1.2);
+  color: blue;
+}
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
 }
