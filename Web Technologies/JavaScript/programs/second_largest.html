@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Js Second Highest</title>
+</head>
+<body>
+    <h1>JS Second </h1>
+    <script>
+        let arr=[4,22,5,10,23,9]
+        let max=0,secondMax=0;
+        for(let i=0;i<arr.length;i++){
+            if(arr[i]>max){
+                max=arr[i]
+            }
+        }
+        for(let i=0;i<arr.length;i++){
+            if(arr[i]>secondMax && arr[i]!==max){
+                secondMax=arr[i]
+            }
+        }
+        console.log(secondMax);
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str = 'helloworld'
+        let str2=''
+        let a = [...str]
+        for (let i = 0; i < a.length; i++) {
+            if (a[i] === 'l')
+                a[i] = 'x'
+            str2+=a[i]
+        }
+        console.log(str2);
+    </script>
+</body>
+
+</html>

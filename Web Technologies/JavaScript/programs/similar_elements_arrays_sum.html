@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<h1>JS Similar Elements in an array sum</h1>
+<script>
+    let a=[2,12,34,10,9]
+    let b=[10,12,34,68,9,30]
+    let res=[]
+    let i=0;
+            let s=0;
+            for(let j=0;j<b.length;j++){
+                console.log(a[i]);
+                console.log('---------');
+                console.log(b[j]);
+                if(a[i]===b[j]){
+
+                    console.log(a[i]===b[j]);
+                    s+=2*b[j]
+                    res.push(s)
+                    s=0
+                }else{
+                    res=a.concat(b)
+                }
+                i++;
+            }        
+          
+ 
+    console.log(res)
+</script>    
+</body>
+</html>

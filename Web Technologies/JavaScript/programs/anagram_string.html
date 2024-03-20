@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let str1 = prompt('Enter string 1')
+        let str2 = prompt('Enter string 2')
+        function isAnagram(s1, s2) {
+
+            let a = [...s1]
+            let b = [...s2]
+            if (str1.length !== str2.length)
+                return false;
+            a = a.sort()
+            b = b.sort()
+            for (let i = 0; i < a.length; i++) {
+                if (a[i] != b[i]) {
+
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        let b = isAnagram(str1, str2)
+        if (b)
+            console.log('String are an anagram');
+        else
+            console.log('Strings are not an anagram');
+    </script>
+</body>
+
+</html>
