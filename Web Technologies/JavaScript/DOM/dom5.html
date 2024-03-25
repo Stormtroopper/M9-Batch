@@ -97,7 +97,7 @@
         function increment(id){
             let items=prod_details.map((item)=>{
              if(item.id===id){
-                return {...item,qty:++i.qty}
+                return {...item,qty:++item.qty}
              }    
              return item;
             })
